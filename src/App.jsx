@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import { Card } from './components/Card';
 
 function App() {
 
   return (
     <>
-      <h1 className='text-xl font-bold text-red-500'>React, Vite, Tailwind</h1>
+      <h1>2duz</h1>
+      <Card />
     </>
   )
 }
