@@ -1,12 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, {useState} from 'react';
 
 
-export const TodoForm = () => {
+export const TodoForm = () => { 
+  const [task, setTask] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (task.trim() !== '') {
+      console.log(task);
+      setTask('');
+    }
+    
+  }
+
   return (
-    <form>
-      <input type='text' placeholder='name a task' />
-      <button type='submit'>Submit</button>
+    <form id='TodoForm' className='TodoForm'>
+      <input  type='text' 
+              className='todo-input' 
+              placeholder='name a task' 
+              onChange={(e) => setTask(e.target.value)}
+    />
+      <button type='submit' onClick={handleSubmit}>Submit</button>
     </form>
   )
 }

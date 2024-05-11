@@ -5,6 +5,7 @@ import { TodoForm } from './TodoForm';
 export const Card = () => {
   return (
     <div>
+      <h1>2DUZ</h1>
       <TodoForm />
     </div>
   )
