@@ -8,12 +8,23 @@ const App = () =>  {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks(currentTasks => {
+    setTasks(theseTasks => {
       return [
-        ...currentTasks, { id: crypto.randomUUID(), title: entry, completed: false}
+        ...theseTasks, { id: crypto.randomUUID(), title: entry, completed: false}
       ]
     })
-    console.log(tasks);
+    setEntry("");
+  }
+
+  const toggleTask = (id, completed) => {
+    setTasks(theseTasks => {
+      return theseTasks.map(task => {
+        if (task.id === id) {
+          return {...task, completed}
+        }
+        return task;
+      })
+    })
   }
 
   return (
@@ -29,7 +40,7 @@ const App = () =>  {
           return (
             <li key={task.id}>
               <label>
-                <input type='checkbox' checked={task.completed} />
+                <input type='checkbox' checked={task.completed} onChange={e => toggleTask(task.id, e.target.checked)} />
                 {task.title}
               </label>
               <button className='delete-btn'>Delete</button>
