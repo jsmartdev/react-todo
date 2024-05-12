@@ -27,6 +27,16 @@ const App = () =>  {
     })
   }
 
+  const deleteTask = (id) => {
+    setTasks(theseTasks => {
+      return theseTasks.filter(task => {
+        if (task.id !== id) {
+          return task;
+        }
+      })
+    })
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit} className='new-item-form'>
@@ -43,7 +53,7 @@ const App = () =>  {
                 <input type='checkbox' checked={task.completed} onChange={e => toggleTask(task.id, e.target.checked)} />
                 {task.title}
               </label>
-              <button className='delete-btn'>Delete</button>
+              <button className='delete-btn' onClick={() => deleteTask(task.id)}>Delete</button>
             </li>
           )
         })}
