@@ -1,12 +1,11 @@
 import React from 'react';
-import { Card } from './components/Card';
 import './index.css';
 
 function App() {
 
   return (
     <div className='page'>
-      <Card />
+    <h1>2duz</h1>
     </div>
       
   )
