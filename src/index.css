@@ -9,7 +9,7 @@
   height: 100vh;
 }
 
-.todo-form {
+.new-item-form {
   display: flex;
   flex-direction: column;
   color: blue;
