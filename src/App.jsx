@@ -46,6 +46,7 @@ const App = () =>  {
       </form>
       <h1 className='header'>Task List</h1>
       <ul className='list'>
+        {tasks.length === 0 && "No Tasks"}
         {tasks.map(task => {
           return (
             <li key={task.id}>
