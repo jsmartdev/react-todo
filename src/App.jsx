@@ -1,19 +1,17 @@
 import { useState } from 'react';
+import { NewTaskForm } from './NewTaskForm';
 import './index.css';
 
 const App = () =>  {
-  const [ entry, setEntry ] = useState('');
   const [ tasks, setTasks] = useState([]);
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const addTask = (title) => {
     setTasks(theseTasks => {
       return [
-        ...theseTasks, { id: crypto.randomUUID(), title: entry, completed: false}
+        ...theseTasks, { id: crypto.randomUUID(), title, completed: false}
       ]
     })
-    setEntry("");
   }
 
   const toggleTask = (id, completed) => {
@@ -39,11 +37,7 @@ const App = () =>  {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className='new-item-form'>
-        <label htmlFor='itemInput'>New Task</label>
-        <input value={entry} onChange={e => setEntry(e.target.value)} type='text' id='itemInput'/>
-        <button className='add-btn'>Add</button>
-      </form>
+      <NewTaskForm addButton={addTask} />
       <h1 className='header'>Task List</h1>
       <ul className='list'>
         {tasks.length === 0 && "No Tasks"}
