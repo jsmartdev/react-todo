@@ -8,7 +8,7 @@ export const TaskItem = ({ id, title, completed, toggleButton, deleteButton }) =
         />
         {title}
       </label>
-      <button className='delete-btn' onClick={() => deleteButton(id)}>Delete</button>
+      <button onClick={() => deleteButton(id)}>Delete</button>
     </li>
   )
 }

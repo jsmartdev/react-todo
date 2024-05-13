@@ -44,11 +44,12 @@ const App = () =>  {
   }
 
   return (
-    <>
+    <div>
+      <h1>2DUZ</h1>
       <NewTaskForm addButton={addTask} />
-      <h1 className='header'>Task List</h1>
+      <h1>Task List</h1>
       <TaskList tasks={tasks} deleteButton={deleteTask} toggleButton={toggleTask} />
-    </>
+    </div>
   )
 }
 
