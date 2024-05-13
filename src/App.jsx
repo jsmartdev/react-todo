@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { NewTaskForm } from './NewTaskForm';
-import { TaskList } from './TaskList';
+import { NewTaskForm } from './components/NewTaskForm';
+import { TaskList } from './components/TaskList';
 import './index.css';
 
 const App = () =>  {
