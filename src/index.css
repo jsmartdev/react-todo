@@ -1,12 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.new-item-form {
-  display: flex;
-  flex-direction: column;
-  color: blue;
-  width: 30%;
-}
