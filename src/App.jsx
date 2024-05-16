@@ -46,9 +46,9 @@ const App = () =>  {
   return (
     <div className='flex flex-col items-center justify-center w-screen h-screen'>
       <h1 className='underline'>2DUZ</h1>
-      <NewTaskForm addButton={addTask} />
+      <NewTaskForm addTask={addTask} />
       <h1>Task List</h1>
-      <TaskList tasks={tasks} deleteButton={deleteTask} toggleButton={toggleTask} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} />
     </div>
   )
 }

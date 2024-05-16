@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export const NewTaskForm = ({ addButton }) => {
+export const NewTaskForm = ({addTask}) => {
 
   const [ entry, setEntry ] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (entry === "") return;
-    addButton(entry);
+    addTask(entry);
     setEntry("");
   }
 

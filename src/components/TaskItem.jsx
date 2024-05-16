@@ -1,14 +1,16 @@
-export const TaskItem = ({ id, title, completed, toggleButton, deleteButton }) => {
+
+export const TaskItem = ({ id, title, completed, toggleTask, deleteTask }) => {
+
   return (
     <li key={id}>
       <label>
         <input  type='checkbox' 
                 checked={completed} 
-                onChange={e => toggleButton(id, e.target.checked)} 
+                onChange={e => toggleTask(id, e.target.checked)} 
         />
         {title}
       </label>
-      <button onClick={() => deleteButton(id)}>Delete</button>
+      <button onClick={() => deleteTask(id)}>Delete</button>
     </li>
   )
 }

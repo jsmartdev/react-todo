@@ -1,6 +1,6 @@
 import { TaskItem } from './TaskItem';
 
-export const TaskList = ({ tasks, toggleButton, deleteButton }) => {
+export const TaskList = ({ tasks, toggleTask, deleteTask }) => {
   return (
     <ul>
         {tasks.length == 0 && "No Tasks"}
@@ -8,8 +8,8 @@ export const TaskList = ({ tasks, toggleButton, deleteButton }) => {
           return (
             <TaskItem{...task} 
                       key={task.id} 
-                      toggleButton={toggleButton}
-                      deleteButton={deleteButton}
+                      toggleTask={toggleTask}
+                      deleteTask={deleteTask}
             />
           )
         })}
