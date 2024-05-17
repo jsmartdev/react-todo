@@ -14,10 +14,10 @@ export const NewTaskForm = ({addTask}) => {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor='itemInput'>New Task</label>
-      <input 
-        value={entry} 
-        onChange={e => setEntry(e.target.value)} 
-        type='text' id='itemInput'
+      <input  id='itemInput'
+              value={entry} 
+              onChange={e => setEntry(e.target.value)} 
+              type='text' 
       />
       <button>Add</button>
     </form>
