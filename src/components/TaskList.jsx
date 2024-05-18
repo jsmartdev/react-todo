@@ -4,7 +4,7 @@ import { NewTaskForm } from './NewTaskForm';
 
 export const TaskList = () => {
 
-  const [ tasks, setTasks] = useState([]);
+  const [ tasks, setTasks ] = useState([]);
   
   const addTask = (title) => {
     setTasks(theseTasks => {
@@ -33,17 +33,18 @@ export const TaskList = () => {
         }
       })
     })
-  }
+  } 
 
   return (
     <>
-    <NewTaskForm addTask={addTask}/>
+    <NewTaskForm addTask={addTask} />
     <ul>
         {tasks.length == 0 && "No Tasks"}
         {tasks.map(task => {
           return (
             <TaskItem {...task} 
                       key={task.id} 
+                      task={task}
                       toggleTask={toggleTask}
                       deleteTask={deleteTask}
             />

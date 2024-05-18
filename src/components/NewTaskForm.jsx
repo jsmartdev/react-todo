@@ -6,9 +6,9 @@ export const NewTaskForm = ({addTask}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (entry === "") return;
+    if (entry  === '') return;
     addTask(entry);
-    setEntry("");
+    setEntry('');
   }
 
   return (
