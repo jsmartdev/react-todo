@@ -1,5 +1,3 @@
-import { NewTaskForm } from "./NewTaskForm";
-
 export const TaskItem = ({ id, title, completed, toggleTask, deleteTask }) => {
 
   return (

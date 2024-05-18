@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { TaskList } from './components/TaskList';
 import './index.css';
 
