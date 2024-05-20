@@ -1,4 +1,5 @@
-export const TaskItem = ({ id, title, completed, toggleTask, deleteTask }) => {
+export const TaskItem = ({ id, completed, toggleTask, deleteTask }) => {
+  const [ edit, setEdit] = useState({id: null, value: ''})
 
   return (
     <li key={id}>
@@ -9,6 +10,7 @@ export const TaskItem = ({ id, title, completed, toggleTask, deleteTask }) => {
         />
         {title}
         <button onClick={() => deleteTask(id)}>Delete</button>
+        <button onClick={() => setEdit(edit.id === id, value === task.text)}>Edit</button>
       </label>
     </li>
   )

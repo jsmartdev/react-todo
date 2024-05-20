@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-export const NewTaskForm = ({addTask}) => {
-
-  const [ entry, setEntry ] = useState('');
+export const NewTaskForm = ({entry, setEntry, addTask}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
