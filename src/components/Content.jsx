@@ -1,9 +1,14 @@
-import React from 'react'
+import { useState } from 'react'
 
 export const Content = ({ person }) => {
 
+  const [ name, setName ] = useState('Jesse');
+  const [ count, setCount ] = useState(0);
+
   const handleClick = () => {
-    console.log("Button Clicked!")
+    setCount(count + 1);
+    setCount(count + 1);
+    console.log(count)
   }
 
   const handleClick2 = (dude) => {
@@ -12,7 +17,7 @@ export const Content = ({ person }) => {
 
   return (
     <main>
-      <p>Hello {person}!</p>
+      <p>Hello {name}!</p>
       <button onClick={handleClick}>Button1</button>
       <button onClick={() => {handleClick2('Jesse')}}>Button2</button>
     </main>
