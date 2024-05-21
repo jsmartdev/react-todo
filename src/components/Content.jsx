@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 
-export const Content = ({ person }) => {
+export const Content = () => {
 
   const [ items, setItems ] = useState([
     {
