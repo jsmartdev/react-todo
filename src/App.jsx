@@ -1,4 +1,4 @@
-import { TaskList } from './components/TaskList';
+
 import './index.css';
 
 const App = () =>  {
@@ -8,7 +8,6 @@ const App = () =>  {
     <div className='flex flex-col items-center justify-center w-screen h-screen'>
       <h1 className='underline'>2DUZ</h1>
       <h1>Task List</h1>
-      <TaskList />
     </div>
   )
 }
