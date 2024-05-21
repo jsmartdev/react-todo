@@ -25,6 +25,11 @@ export const Content = () => {
     const listItems = items.map((item) => item.id === id ? {...item, checked: !item.checked} : item);
     setItems(listItems);
   }
+
+  const handleDelete = (id) => {
+    const listItems = items.filter((item) => item.id !== id);
+    setItems(listItems);
+  }
   
   
   return (
@@ -44,6 +49,7 @@ export const Content = () => {
             <FaTrashAlt 
               role='button' 
               tabIndex='0'
+              onClick={() => handleDelete(item.id)}
             />
           </li>
         ))}
