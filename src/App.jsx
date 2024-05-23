@@ -7,39 +7,37 @@ import './index.css';
 
 const App = () =>  {
 
-  const [ items, setItems ] = useState([
-    {
-      id: crypto.randomUUID(),
-      checked: false,
-      item: 'Item 1'
-    },
-    {
-      id: crypto.randomUUID(),
-      checked: false,
-      item: 'Item 2'
-    },
-    {
-      id: crypto.randomUUID(),
-      checked: false,
-      item: 'Item 3'
-    }
-  ]);
+  const [ items, setItems ] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
 
   const [ newItem, setNewItem ] = useState('');
 
+  const setAndSave = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem('shoppinglist', JSON.stringify(newItems));
+  }
+
+  const addItem = (item) => {
+    const id = crypto.randomUUID();
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem];
+    setAndSave(listItems)
+  }
+
   const handleCheck = (id) =>  {
     const listItems = items.map((item) => item.id === id ? {...item, checked: !item.checked} : item);
-    setItems(listItems);
+    setAndSave(listItems);
   }
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
+    setAndSave(listItems);
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted');
+    if (!newItem) return;
+    addItem(newItem);
+    setNewItem('');
   }
   
   return (
